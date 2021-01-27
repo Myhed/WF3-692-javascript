@@ -155,7 +155,7 @@ window.onload = function(){
         console.log("type: ",typeof nombreNumber, "value: ", nombreNumber);
 
         // nombreString reste une chaine de caractère, elle n'a pas changé.
-        console.log('nombreString: ', typeof nombreString)
+        console.log('nombreString: ', typeof nombreString);
 
         // Convertir un nombre en chaine de caractère
         var reConvertNombreNumberToString = nombreNumber.toString()
@@ -163,7 +163,7 @@ window.onload = function(){
 
        // Intéraction avec le DOM ( Document Object Model )
         // Création des éléments
-        var createDivElement = document.createElement('div');
+        var createDivElement = document.createElement('section');
         // Assigner des attributs à notre élément div
         createDivElement.setAttribute('class', 'square');
 
@@ -181,8 +181,8 @@ window.onload = function(){
         console.log(createDivElement);
 
         // Afficher l'élement dans notre page html
-        var test = document.querySelector('#test');
-        test.appendChild(createDivElement);
+        var body = document.querySelector('body');
+        body.appendChild(createDivElement);
 
 
         
