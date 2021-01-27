@@ -160,6 +160,31 @@ window.onload = function(){
         // Convertir un nombre en chaine de caractère
         var reConvertNombreNumberToString = nombreNumber.toString()
         console.log("type: ", typeof reConvertNombreNumberToString, "value: ", reConvertNombreNumberToString);
+
+       // Intéraction avec le DOM ( Document Object Model )
+        // Création des éléments
+        var createDivElement = document.createElement('div');
+        // Assigner des attributs à notre élément div
+        createDivElement.setAttribute('class', 'square');
+
+        var createP = document.createElement('p');
+        // Assigner un attribut à notre élément p
+        createP.setAttribute('class', 'color');
+        console.log('createP: ', createP);
+        
+        // Assigner un texte à notre paragraphe
+        createP.innerText = "Hello World !";
+        console.log('createDivElement: ', createDivElement);
+
+        // Ajouter un élément enfant à notre div
+        createDivElement.appendChild(createP);
+        console.log(createDivElement);
+
+        // Afficher l'élement dans notre page html
+        var test = document.querySelector('#test');
+        test.appendChild(createDivElement);
+
+
         
     
 }
