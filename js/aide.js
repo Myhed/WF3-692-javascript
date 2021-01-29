@@ -293,12 +293,12 @@ window.onload = function(){
 
         // Nouvelle méthode de faire des class en javascript
         class Personnage {
-            // Les méthodes et les propriétés préfixer d'un underscore sont des éléments dit priver
+            // Les méthodes et les propriétés préfixer d'un underscore sont des éléments dit privé
             constructor(nom, prenom, age, addresse){
-                this._nom = nom; // priver
-                this._prenom = prenom; // priver
-                this._age = age; // priver
-                this._membreGroupe = true; // priver
+                this._nom = nom; // privé
+                this._prenom = prenom; // privé
+                this._age = age; // privé
+                this._membreGroupe = true; // privé
                 this.addresse = addresse // public
             }
 
@@ -420,5 +420,26 @@ window.onload = function(){
         const newArray5 = array.filter((__, i) => Number.isInteger(array[i]));
 
         console.log("newArray5: ", newArray5);
+
+        // Comment itérer dans un objet avec le nouveau javascript
+        const monObjet = {
+            key1: "foo",
+            key2: "bar",
+            key3: "foobar"
+        }
+
+        // Ancienne méthode pour parcourir un objet
+        for(var key in monObjet){
+            console.log(monObjet[key]);
+        }
+
+        // Récupères les clés d'un objet
+        Object.keys(monObjet).forEach(key => {
+            console.log("key: ", key, "values: ", monObjet[key]);
+        });
+        // Récupères les valeurs d'un objet
+        Object.values(monObjet).forEach(values => {
+            console.log("values: ", values);
+        });
     
 }
