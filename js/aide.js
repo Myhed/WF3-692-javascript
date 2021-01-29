@@ -361,6 +361,64 @@ window.onload = function(){
 
         personnage1.changeMembreGroupeProperty = false;
         console.log(personnage1.changeMembreGroupeProperty);
-            
+    
+        // Introduction aux différentes fonctionnalités de l'es6 (ECMASCRIPT 2016)
+            // Ne plus utiliser le mot clés var mais plûtot utiliser let, const
+        let x = 0;
+        const a = 2;
+
+        x = 3;
+
+        // Arrow Function syntaxe ES6 (ECMASCRIPT 2016)
+        const functionEs6_1 = () => "toto"; // Arrow Function oneline
+        const functionEs6_2 = () => {  // Arrow Function with return
+            return "toto"
+        }
+
+        console.log("functionEs6_2 oneline function without return key: ",functionEs6_1());
+        console.log("functionEs6_2 with return key: ",functionEs6_2());
+
+        const div1 = document.querySelector('#div1');
+
+        div1.addEventListener('click', (event) => { // addEventListener with Arrow Function
+
+        });
+        
+        // Comment faire un for dans le nouveau javascript ?
+        // ne plus utiliser de for mais la syntaxe du dessous
+        const array = ['toto', 'tata', 'titi', 1, 2];
+        Array(3).fill("abc").forEach(function(__, i){ // function forEach ne retourne strictement rien
+            // forEach prend deux paramètre qui est l'item courant du tableau ainsi que son indice
+            // lorsqu'on a pas besoin d'utiliser le premier paramètre alors on utilise deux underscores pour faire comprendre aux 
+            // développeur qu'on utilisera ce paramètre
+            console.log(i);
+        });
+
+        // parcourir mon tableau avec un forEach
+        array.forEach((itemCourant, index) => {
+            console.log("itemCourant: ", itemCourant);
+            console.log('index: ', index);
+        });
+
+        // For qui retourne un tableau d'élément
+        const newArray1 = Array(array.length).fill("abc").map(function(item, index){ 
+            // La fonction map comparer au forEach retourne un tableau de même taille mais modifié
+            return item + "d";
+        });
+
+        // for oneline qui retourne un tableau d'élément
+        const newArray2 = Array(array.length).fill("abc").map((item, index) => item + "d"); // function oneline avec arrow function
+
+        const newArray3 = Array(array.length).fill("abc").map(item => item + "d"); // function oneline avec arrow function avec supression des paramètre qu'on a pas besoin
+
+        console.log(newArray1);
+
+        const newArray4 = array.filter((__, i) => {
+            return Number.isInteger(array[i]);
+        });
+
+        const newArray5 = array.filter((__, i) => Number.isInteger(array[i]));
+
+        console.log("newArray5: ", newArray5);
     
 }
