@@ -406,7 +406,12 @@ window.onload = function(){
             return item + "d";
         });
 
-        // for oneline qui retourne un tableau d'élément
+        /* Il y'a plusieurs paradigm
+          * Paradigme procédural
+          * Paradigme Object
+          * Paradigme fonctionnelle
+        */
+        // for oneline qui retourne un tableau d'élément cela s'appelle un paradigme fonctionnelle
         const newArray2 = Array(array.length).fill("abc").map((item, index) => item + "d"); // function oneline avec arrow function
 
         const newArray3 = Array(array.length).fill("abc").map(item => item + "d"); // function oneline avec arrow function avec supression des paramètre qu'on a pas besoin
