@@ -217,6 +217,79 @@ window.onload = function(){
             alert("élément désormais cliquable ! :)");
         });
 
+        // Le mot clés this
+         var div1 = document.querySelector('#div1')
+
+         div1.addEventListener('click', function(){
+            console.log(this);
+         });
+
+        // function callback
+
+        function faireCrepe(quantityOeuf, quantityFarine, quantityLait, callback){
+            console.log("ingrédient recette: ", "," , quantityOeuf, "," ,quantityFarine ,",", quantityLait);
+            callback("crêpe cuite !");
+        }
+
+        faireCrepe("2", "4", "1", function(resultatCrepe){
+            console.log(resultatCrepe);
+        });
+
+        // Les function import/export avant d'importer une fonction il faut qu'elle soit au préalable exporter dans le fichier en question
+        // Allez voir le fichier module-function.js pour voir comment exporter un élément
+        import { helloWorldConsole, helloWorldDom, createElementDom } from './module-function.js';
+        var body = document.querySelector('body');
+        helloWorldConsole("Myhed");
+        var pElement = helloWorldDom("Myhed");
+        body.appendChild(pElement);
+        createElementDom("p", body, "toto");
+
+        // Ancienne Méthode pour créer une class
+    
+        function Personnage(nom, prenom, age){
+            this.nom = nom;
+            this.prenom = prenom;
+            this.age = age;
+            this.crier = function(){
+                console.log('crier')
+            }
+        }
+
+        // Mon premier personnage
+
+        var personnage = new Personnage("Ben Rhouma", "Myhed", "24");
+    
+        // On créer via le prototype une fonction qui peut être ré-érite selon l'objet utiliser
+         Personnage.prototype.avancer = function() {
+            console.log("Votre personnage avance...");
+        }
+
+        // On appelle la fonction personnage avancer
+        console.log(personnage.avancer())
+
+        // On créer notre deuxième objet Personnage
+        var personnage2 = new Personnage("toto", "titi","25");
+
+        console.log(personnage2)
+
+        // On ré-écrit la fonction avancer de ce personnage
+        Personnage.prototype.avancer = function(){
+            console.log("toto");
+        }
+
+        console.log(personnage2.avancer())
+
+        var personnage3 = new Personnage("toto", "titi", 26);
+        var personnage4 = new Personnage("foo", "bar", 21);
+
+        // On peut aussi stocker nos class dans un objet
+        var allPersonnage = {
+            personnage1,
+            personnage2
+        }
+        // appeler les divers propriété de nos différente class dans notre objet
+        console.log(allPersonnage.personnage1.age);
+        console.log(allPersonnage.personnage2.age);
         
     
 }
