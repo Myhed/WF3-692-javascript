@@ -290,6 +290,77 @@ window.onload = function(){
         // appeler les divers propriété de nos différente class dans notre objet
         console.log(allPersonnage.personnage1.age);
         console.log(allPersonnage.personnage2.age);
-        
+
+        // Nouvelle méthode de faire des class en javascript
+        class Personnage {
+            // Les méthodes et les propriétés préfixer d'un underscore sont des éléments dit priver
+            constructor(nom, prenom, age, addresse){
+                this._nom = nom; // priver
+                this._prenom = prenom; // priver
+                this._age = age; // priver
+                this._membreGroupe = true; // priver
+                this.addresse = addresse // public
+            }
+
+            get prenomProperty(){ // permet de récupérer la propriété prenom
+                return this.prenom
+            }
+
+            get nomProperty(){ // permet de récupérer la propriété nom
+                return this.nom;
+            }
+
+            get ageProperty(){ // permet de récupérer la propriété age
+                return this.age
+            }
+
+            get membreGroupeProperty(){ // permet de récupérer la propriété membreGroupe
+                return this.membreGroupe;
+            }
+
+            set changePrenomProperty(prenom){ // permet de changer la propriété prenom
+                this.prenom = prenom;
+            }
+            
+            set changeNomProperty(nom){ // permet de changer la propriété nom
+                this.nom = nom;
+            }
+
+            set changeAgeProperty(age){ // permet de changer la propriété age
+                this.age = age;
+            }
+
+            set changeMembreGroupeProperty(membreGroupe){ // permet de changer la propriété membreGroupe
+                this.membreGroupe = membreGroupe;
+            }
+
+            _sayHelloWorld(){ // méthode priver préfixer d'un underscore
+                console.log('Hello World !')
+            }
+
+            helper(){ // peut être utiliser depuis une instance de la class donc à l'extérieur de celle-ci
+                this._sayHelloWorld(); 
+                // La fonction _sayHelloWorld ne peut être utilisé que à l'intérieur de class parce qu'elle est privé
+            }
+
+        }
+
+        var personnage1 = new Personnage(["toto"], "titi", 23);
+
+        // getter
+        console.log(personnage1.prenomProperty);
+        console.log(personnage1.nomProperty);
+        console.log(personnage1.ageProperty);
+        console.log(personnage1.membreGroupeProperty);
+
+        // setter
+        personnage1.changePrenomProperty = "tata"
+        console.log(personnage1.prenomProperty);
+
+        // change membreGroupe Property
+
+        personnage1.changeMembreGroupeProperty = false;
+        console.log(personnage1.changeMembreGroupeProperty);
+            
     
 }
