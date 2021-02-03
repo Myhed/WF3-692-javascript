@@ -1,18 +1,18 @@
 p {
-    color: red;
+  color: red;
 }
 
 .square {
-    height: 150px;
-    width: 150px;
-    padding: 10px 5px;
-    background-color: aquamarine;
-    cursor: pointer;
-    /* display: inline-block; */
-    float: left;
-    margin: 5px 10px;
+  width: 350px;
+  height: 350px;
+  /* padding: 10px 5px; */
+  background-color: aquamarine;
+  cursor: pointer;
+  /* display: inline-block; */
+  float: left;
+  margin: 5px 10px;
 }
 
 .color {
-    color: blueviolet;
+  color: blueviolet;
 }
