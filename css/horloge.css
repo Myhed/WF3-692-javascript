@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    margin:75px 0;
+    text-align: center;
+}
+
+#horloge {
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 1px 2px 1px black;
+}
+
+#start, #stop {
+    display: block;
+    margin:10px auto;
+    width: 95px;
+    padding: 8px 6px;
+    border: none;
+    cursor: pointer;
+}
+
+#stop {
+    color:white;
+    background-color: brown;
+}
+
+#start {
+    background: orange;
+    color: white;
+}
